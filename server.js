@@ -30,7 +30,6 @@ app.get("/", (req, res) => {
     res.render("home.pug", {
         pageTitle: "Home Page",
         welcomeMessage: "The quick red fox jumps over the lazy dog",
-        currentYear: new Date().getFullYear()
     });
 });
 
@@ -38,7 +37,6 @@ app.get("/about", (req, res) => {
     res.render("about.pug", {
         pageTitle: "About Page",
         welcomeMessage: "The quick orange fox jumps over the lazy dog.",
-        currentYear: new Date().getFullYear(),
     });
 });
 
@@ -46,6 +44,10 @@ app.get("/bad", (req, res) => {
     res.json({
         error: "Unable to handle request"
     });
+});
+
+app.get("/projects", (req, res) => {
+    res.render("projects.pug", { title: "Projects", content: "This is my portfolio" });
 });
 
 app.listen(port, () => {
